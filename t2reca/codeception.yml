@@ -14,9 +14,9 @@ modules:
             configFile: 'config/test.php'
     enabled:
         - Db:
-            dsn: 'pgsql:host=localhost;dbname=proyecto_test'
-            user: 'proyecto'
-            password: 'proyecto'
+            dsn: 'pgsql:host=localhost;dbname=t2reca_test'
+            user: 't2reca'
+            password: 't2reca'
 
 # To enable code coverage:
 #coverage:

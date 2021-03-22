@@ -2,11 +2,11 @@
 
 BASE_DIR=$(dirname "$(readlink -f "$0")")
 if [ "$1" != "test" ]; then
-    psql -h localhost -U proyecto -d proyecto < $BASE_DIR/proyecto.sql
-    if [ -f "$BASE_DIR/proyecto_test.sql" ]; then
-        psql -h localhost -U proyecto -d proyecto < $BASE_DIR/proyecto_test.sql
+    psql -h localhost -U t2reca -d t2reca < $BASE_DIR/t2reca.sql
+    if [ -f "$BASE_DIR/t2reca_test.sql" ]; then
+        psql -h localhost -U t2reca -d t2reca < $BASE_DIR/t2reca_test.sql
     fi
-    echo "DROP TABLE IF EXISTS migration CASCADE;" | psql -h localhost -U proyecto -d proyecto
+    echo "DROP TABLE IF EXISTS migration CASCADE;" | psql -h localhost -U t2reca -d t2reca
 fi
-psql -h localhost -U proyecto -d proyecto_test < $BASE_DIR/proyecto.sql
-echo "DROP TABLE IF EXISTS migration CASCADE;" | psql -h localhost -U proyecto -d proyecto_test
+psql -h localhost -U t2reca -d t2reca_test < $BASE_DIR/t2reca.sql
+echo "DROP TABLE IF EXISTS migration CASCADE;" | psql -h localhost -U t2reca -d t2reca_test
