@@ -1,0 +1,90 @@
+
+proyecto.sh junio
+
+make serve
+
+db/create.sh
+
+./yii migrate/create create_alumnos_table
+
+(Creas la migracion, cuando modificamos todo usamos este comando.)
+
+./yii migrate
+
+./yii migrate/create create_asignatura_table
+(creas la migracion)
+
+
+ ./yii migrate/create create_junction_table_for_alumnos_table_and_asignatura_table
+(Tabla de join)
+
+Modelo
+
+alumnos
+Alumnos
+
+CRUD 
+
+http://hostname/index.php?r=gii
+
+
+crud generat
+
+app\models\Alumnos
+app\models\AlumnosSearch
+app\controllers\AlumnosControlller
+
+
+
+
+
+
+main url 
+alumnos/index
+
+
+
+
+models/alumnos
+
+public static function lista()
+{
+
+return static::find()
+->select('nombre);
+->indexBy('id');
+->column();
+
+
+notas/controlllers
+
+actionIndex (Es donde tenemos que cambiar eso)
+
+'listaAlumnos'=>Alumnos::lista()
+
+
+
+
+create.php
+
+'listaAlumnos'=>\app\models\Alumnos::lista()
+
+
+form.php
+
+dropDownList($listaAsignatura)->label("Asignatura")
+
+
+
+
+} 
+
+
+
+form.php
+dropDownList([0,1,2,3,4,5,6,7,8,9,10])
+
+
+notas
+
+rules()
