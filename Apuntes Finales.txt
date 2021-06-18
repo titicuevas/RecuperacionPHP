@@ -43,31 +43,36 @@ main url
 alumnos/index
 
 
+models/asignatura
 
-
-models/alumnos
+Asignaturas.php
 
 public static function lista()
 {
 
-return static::find()
-->select('nombre);
-->indexBy('id');
+return  static::find()
+->select('denominacion')
+->indexBy('id')
 ->column();
 
 
-notas/controlllers
-
-actionIndex (Es donde tenemos que cambiar eso)
-
-'listaAlumnos'=>Alumnos::lista()
 
 
+controlllers/notasControlllers.php
 
+
+actionCreate (Es donde tenemos que cambiar eso)
+return $this (Meter eso abajo)
+
+'listaAsignaturas'=>Asignaturas::lista()
+
+
+
+view/notas
 
 create.php
 
-'listaAlumnos'=>\app\models\Alumnos::lista()
+'listaAsignaturas'=>$listaAsignaturas
 
 
 form.php
@@ -85,6 +90,14 @@ form.php
 dropDownList([0,1,2,3,4,5,6,7,8,9,10])
 
 
-notas
+models/notas
 
 rules()
+validarTrimestre(BuscarRicardo)
+
+
+Creamos un FinalesController.php
+
+FinalesControllers.php
+
+
